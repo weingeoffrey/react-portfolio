@@ -3,14 +3,53 @@ import './App.css';
 import React from 'react';
 
 class App extends React.Component {
+	state = {
+		aboutMe: true,
+		projects: false,
+		contact: false,
+	};
+
 	render() {
 		return (
 			<div className="App">
-				<section className="intro-main">
-					<h1>Geoffrey Wein</h1>
-					<h3>IT Professional</h3>
-					<h3>Future Full Stack Developer</h3>
-				</section>
+				<Header />
+				{this.state.aboutMe ? <AboutMe /> : null}
+				{this.state.projects ? <Projects /> : null}
+				{this.state.contact ? <Contact /> : null}
+				<footer>
+					<div className="contact-social">
+						<ul className="socialbtns">
+							<li>
+								<a href="https://github.com/weingeoffrey" target="_blank">
+									<img src="./images/github-icon.svg" alt="GitHub"></img>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/geoffrey-wein-731376104/"
+									target="_blank"
+								>
+									<img src="./images/linkedin-icon.svg" alt="LinkedIn"></img>
+								</a>
+							</li>
+							<li>
+								<a href="mailto:wein.geoffrey@gmail.com">
+									<img src="./images/email-icon.svg" alt="Email Me"></img>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<h2>Made by Geoffrey Wein</h2>
+				</footer>
+			</div>
+		);
+	}
+}
+
+class Navigation extends React.Component {
+	render() {
+		return (
+			<>
 				<header>
 					<nav className="nav-buttons">
 						<ul>
@@ -26,7 +65,28 @@ class App extends React.Component {
 						</ul>
 					</nav>
 				</header>
+			</>
+		);
+	}
+}
+class Header extends React.Component {
+	render() {
+		return (
+			<>
+				<section className="intro-main">
+					<h1>Geoffrey Wein</h1>
+					<h3>Solution Architect</h3>
+				</section>
+				<Navigation />
+			</>
+		);
+	}
+}
 
+class AboutMe extends React.Component {
+	render() {
+		return (
+			<>
 				<section id="about-me">
 					<div className="flex-row">
 						<h2 className="section-title-primary">About Me</h2>
@@ -53,7 +113,15 @@ class App extends React.Component {
 						</article>
 					</div>
 				</section>
+			</>
+		);
+	}
+}
 
+class Projects extends React.Component {
+	render() {
+		return (
+			<>
 				<section id="projects">
 					<div className="flex-row">
 						<h2 className="section-title-secondary">Projects</h2>
@@ -115,40 +183,22 @@ class App extends React.Component {
 						</article>
 					</div>
 				</section>
-				<section id="contact-info">
-					<div className="flex-row">
-						<h2 className="section-title-primary">Contact</h2>
-					</div>
-					<div className="contact-social">
-						<ul className="socialbtns">
-							<li>
-								<a href="https://github.com/weingeoffrey" target="_blank">
-									<img src="./images/github-icon.svg" alt="GitHub"></img>
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://www.linkedin.com/in/geoffrey-wein-731376104/"
-									target="_blank"
-								>
-									<img src="./images/linkedin-icon.svg" alt="LinkedIn"></img>
-								</a>
-							</li>
-							<li>
-								<a href="mailto:wein.geoffrey@gmail.com">
-									<img src="./images/email-icon.svg" alt="Email Me"></img>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</section>
-
-				<footer>
-					<h2>Made by Geoffrey Wein</h2>
-				</footer>
-			</div>
+			</>
 		);
 	}
 }
 
+class Contact extends React.Component {
+	render() {
+		return (
+			<>
+				<section id="contact-info">
+					<div className="flex-row">
+						<h2 className="section-title-primary">Contact</h2>
+					</div>
+				</section>
+			</>
+		);
+	}
+}
 export default App;
