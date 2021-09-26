@@ -8,15 +8,34 @@ class Navigation extends React.Component {
 					<nav className="nav-buttons">
 						<ul>
 							<li>
-								<a onClick={() => showComponent('isAboutVisible')}>About Me</a>
+								<a
+									onClick={() => {
+										document.title = 'About';
+										showComponent('isAboutVisible');
+									}}
+								>
+									About Me
+								</a>
 							</li>
 							<li>
-								<a onClick={() => showComponent('isProjectsVisible')}>
+								<a
+									onClick={() => {
+										document.title = 'Projects';
+										showComponent('isProjectsVisible');
+									}}
+								>
 									Projects
 								</a>
 							</li>
 							<li>
-								<a onClick={() => showComponent('isContactVisible')}>Contact</a>
+								<a
+									onClick={() => {
+										document.title = 'Contact';
+										showComponent('isContactVisible');
+									}}
+								>
+									Contact
+								</a>
 							</li>
 						</ul>
 					</nav>
