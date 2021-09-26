@@ -9,33 +9,46 @@ import Projects from './components/projects';
 
 class App extends React.Component {
 	state = {
-		isAboutVisible: false,
+		isAboutVisible: true,
 		isProjectsVisible: false,
 		isContactVisible: false,
 	};
 
-	hideComponent(name) {
-		console.log(name);
+	showComponent = (name) => {
 		switch (name) {
 			case 'isAboutVisible':
-				this.setState({ isAboutVisible: !this.state.isAboutVisible });
+				this.setState({
+					isAboutVisible: true,
+					isProjectsVisible: false,
+					isContactVisible: false,
+				});
 				break;
 			case 'isProjectsVisible':
-				this.setState({ isProjectsVisible: !this.state.isProjectsVisible });
+				this.setState({
+					isAboutVisible: false,
+					isProjectsVisible: true,
+					isContactVisible: false,
+				});
 				break;
 			case 'isContactVisible':
-				this.setState({ isContactVisible: !this.state.isContactVisible });
+				this.setState({
+					isAboutVisible: false,
+					isProjectsVisible: false,
+					isContactVisible: true,
+				});
 				break;
 		}
-	}
+	};
 
 	render() {
 		return (
 			<div className="App">
-				<Header hideComponent={this.hideComponent} />
-				{this.state.isAboutVisible ? <AboutMe /> : null}
-				{this.state.isProjectsVisible ? <Projects /> : null}
-				{this.state.isContactVisible ? <Contact /> : null}
+				<div id="content">
+					<Header showComponent={this.showComponent} />
+					{this.state.isAboutVisible ? <AboutMe /> : null}
+					{this.state.isProjectsVisible ? <Projects /> : null}
+					{this.state.isContactVisible ? <Contact /> : null}
+				</div>
 				<Footer />
 			</div>
 		);

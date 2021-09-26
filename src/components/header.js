@@ -8,7 +8,7 @@ class Header extends React.Component {
 					<h1>Geoffrey Wein</h1>
 					<h3>Solution Architect</h3>
 				</section>
-				<Navigation />
+				<Navigation showComponent={this.props.showComponent} />
 			</>
 		);
 	}

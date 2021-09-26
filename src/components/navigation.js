@@ -1,26 +1,22 @@
 import React from 'react';
 class Navigation extends React.Component {
 	render() {
+		var { showComponent } = this.props;
 		return (
 			<>
 				<header>
 					<nav className="nav-buttons">
 						<ul>
 							<li>
-								<a href="#about-me" onClick={() => console.log(this.props)}>
-									About Me
-								</a>
+								<a onClick={() => showComponent('isAboutVisible')}>About Me</a>
 							</li>
 							<li>
-								<a
-									href="#projects"
-									onClick={() => this.setState({ isProjectsVisible: true })}
-								>
+								<a onClick={() => showComponent('isProjectsVisible')}>
 									Projects
 								</a>
 							</li>
 							<li>
-								<a href="#contact-info">Contact</a>
+								<a onClick={() => showComponent('isContactVisible')}>Contact</a>
 							</li>
 						</ul>
 					</nav>
