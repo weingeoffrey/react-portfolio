@@ -12,6 +12,22 @@ class Projects extends React.Component {
 						<article className="project">
 							<img
 								className="proj-thumbnail"
+								src="./images/cherrypicker.png"
+								alt="Cherry-Picker"
+							/>
+							<a
+								href="https://floating-depths-28820.herokuapp.com/#/"
+								target="_blank"
+							>
+								<div className="proj-overlay">
+									<h3 className="proj-title">Cherry Picker</h3>
+									<h4 className="proj-subtitle">MERN Stack</h4>
+								</div>
+							</a>
+						</article>
+						<article className="project">
+							<img
+								className="proj-thumbnail"
 								src="./images/caffeinate.jpg"
 								alt="Caffeinate 2.0"
 							/>
@@ -89,22 +105,6 @@ class Projects extends React.Component {
 									<h4 className="proj-subtitle">
 										JavaScript(MySQL/Inquirer/dotenv)
 									</h4>
-								</div>
-							</a>
-						</article>
-						<article className="project">
-							<img
-								className="proj-thumbnail"
-								src="./images/password-generator.png"
-								alt="Password Generator"
-							/>
-							<a
-								href="https://weingeoffrey.github.io/password-generator/"
-								target="_blank"
-							>
-								<div className="proj-overlay">
-									<h3 className="proj-title">Random Password Generator</h3>
-									<h4 className="proj-subtitle">HTML/CSS/JS</h4>
 								</div>
 							</a>
 						</article>
